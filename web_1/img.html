@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        #buttons {
+            background-color: black;
+            padding: 0px;
+        }
+
+        .button {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px;
+            cursor: pointer;
+            display: inline-block; /* 水平排列按钮 */
+            width: 30%; /* 修改按钮的宽度 */
+            /* height: 40px; 修改按钮的高度 */
+        }
+
+        #images {
+            display: flex; /* 使用 flex 布局 */
+        }
+
+        #cat {
+            flex: 1; /* 设置图片容器的 flex 属性，让它们平均占据可用空间 */
+            background-color: blue; /* 图片容器的背景颜色 */
+            overflow: hidden; /* 隐藏溢出部分 */
+        }
+
+        #dog{
+            flex: 1; /* 设置图片容器的 flex 属性，让它们平均占据可用空间 */
+            background-color: green; /* 图片容器的背景颜色 */
+            overflow: hidden; /* 隐藏溢出部分 */
+        }
+
+        img {
+            width: 50%; /* 图片宽度为容器的一半，即50% */
+            display: block; /* 移除图片的默认内联布局 */
+            margin: 0 auto; /* 图片水平居中 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="buttons">
+            <div class="button" id="left">左</div>
+            <div class="button" id="middle">中</div>
+            <div class="button" id="right">右</div>
+        </div>
+        <div id="images">
+            <div id="cat">
+                <img src="cat.jpg" alt="小猫">
+            </div>
+            <div id="dog">
+                <img src="dog.jpg" alt="小狗">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const leftButton = document.getElementById("left");
+        const middleButton = document.getElementById("middle");
+        const rightButton = document.getElementById("right");
+        const catDiv = document.getElementById("cat");
+        const dogDiv = document.getElementById("dog");
+
+        leftButton.addEventListener("click", () => {
+            catDiv.style.display = "block";
+            dogDiv.style.display = "none";
+        });
+
+        middleButton.addEventListener("click", () => {
+            catDiv.style.display = "block";
+            dogDiv.style.display = "block";
+        });
+
+        rightButton.addEventListener("click", () => {
+            catDiv.style.display = "none";
+            dogDiv.style.display = "block";
+        });
+    </script>
+</body>
+</html>
